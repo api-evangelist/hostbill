@@ -5,8 +5,8 @@ apis:
   - aid: hostbill:hostbill
     name: HostBill
     tags:
-      - API
-    humanURL: https://hostbillapp.com/
+      - Billing
+    humanURL: ' https://api2.hostbillapp.com/'
     properties:
       - url: ' https://api2.hostbillapp.com/'
         type: Documentation
