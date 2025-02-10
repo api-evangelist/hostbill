@@ -6,7 +6,7 @@ apis:
     name: HostBill
     tags:
       - API
-    humanURL: ' https://api2.hostbillapp.com/'
+    humanURL: https://hostbillapp.com/
     properties:
       - url: ' https://api2.hostbillapp.com/'
         type: Documentation
