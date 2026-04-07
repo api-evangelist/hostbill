@@ -8,10 +8,10 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Billing
-  - Web Hosting
-  - Domain Registration
   - Automation
+  - Billing
+  - Domain Registration
+  - Web Hosting
 url: >-
   https://raw.githubusercontent.com/api-evangelist/hostbill/refs/heads/main/apis.yml
 created: '2025-02-09'
