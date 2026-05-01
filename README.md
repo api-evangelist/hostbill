@@ -5,30 +5,31 @@ HostBill is a comprehensive billing and automation software for web hosting prov
 
 ## Scope
 
-- **Type:** Index 
-- **Position:** Consuming 
-- **Access:** 3rd-Party 
+- **Type:** Index
+- **Position:** Consuming
+- **Access:** 3rd-Party
 
 ## Tags:
 
- - Billing, Web Hosting, Domain Registration, Automation
+ - Automation, Billing, Domain Registration, Web Hosting
 
 ## Timestamps
 
-- **Created:** 2025-02-09 
-- **Modified:** 2026-03-16 
+- **Created:** 2025-02-09
+- **Modified:** 2026-04-28
 
 ## APIs
 
 ### HostBill Admin API
-The HostBill Admin API enables custom applications to call HostBill functions remotely via HTTP protocol, providing access to client management, invoicing, service provisioning, and billing operations.
+The HostBill Admin API enables custom applications to call HostBill functions remotely via HTTP protocol, providing access to client management, invoicing, service provisioning, billing operations, ticket handling, and plugin integrations including DNS, IPAM, Proxmox, and VMManager.
 
 **Human URL:** [https://api2.hostbillapp.com/](https://api2.hostbillapp.com/)
 
+**Base URL:** https://yourinstance.hostbillapp.com/api2.php
 
 #### Tags:
 
- - Billing, Web Hosting
+ - Accounts, Billing, Clients, Domains, Invoices, Orders, Services, Tickets, Web Hosting
 
 #### Properties
 
