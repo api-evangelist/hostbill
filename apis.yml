@@ -43,6 +43,8 @@ apis:
         url: https://api2.hostbillapp.com/
       - type: Authentication
         url: https://api2.hostbillapp.com/
+      - type: OpenAPI
+        url: openapi/hostbill-openapi.yml
 common:
   - type: Website
     url: https://hostbillapp.com/
