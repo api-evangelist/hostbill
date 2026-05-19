@@ -1,0 +1,81 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: HostBill Admin API — Transactions
+  description: 'HostBill Admin API — Transactions. 1 operations. Lead operation: List transactions. Self-contained Naftiko
+    capability covering one Hostbill business surface.'
+  tags:
+  - Hostbill
+  - Transactions
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HOSTBILL_API_KEY: HOSTBILL_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: hostbill-transactions
+    baseUri: https://yourinstance.hostbillapp.com
+    description: HostBill Admin API — Transactions business capability. Self-contained, no shared references.
+    resources:
+    - name: admin-api.php#getTransactions
+      path: /admin/api.php#getTransactions
+      operations:
+      - name: gettransactions
+        method: POST
+        description: List transactions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: call
+          in: query
+          type: string
+          required: true
+    authentication:
+      type: apikey
+      key: api_id
+      value: '{{env.HOSTBILL_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: hostbill-transactions-rest
+    port: 8080
+    description: REST adapter for HostBill Admin API — Transactions. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/admin/api-php-gettransactions
+      name: admin-api-php-gettransactions
+      description: REST surface for admin-api.php#getTransactions.
+      operations:
+      - method: POST
+        name: gettransactions
+        description: List transactions
+        call: hostbill-transactions.gettransactions
+        with:
+          call: rest.call
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: hostbill-transactions-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for HostBill Admin API — Transactions. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-transactions
+      description: List transactions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: hostbill-transactions.gettransactions
+      with:
+        call: tools.call
+      outputParameters:
+      - type: object
+        mapping: $.

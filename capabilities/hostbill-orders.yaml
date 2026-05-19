@@ -1,0 +1,81 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: HostBill Admin API — Orders
+  description: 'HostBill Admin API — Orders. 1 operations. Lead operation: List orders. Self-contained Naftiko capability
+    covering one Hostbill business surface.'
+  tags:
+  - Hostbill
+  - Orders
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HOSTBILL_API_KEY: HOSTBILL_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: hostbill-orders
+    baseUri: https://yourinstance.hostbillapp.com
+    description: HostBill Admin API — Orders business capability. Self-contained, no shared references.
+    resources:
+    - name: admin-api.php#getOrders
+      path: /admin/api.php#getOrders
+      operations:
+      - name: getorders
+        method: POST
+        description: List orders
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: call
+          in: query
+          type: string
+          required: true
+    authentication:
+      type: apikey
+      key: api_id
+      value: '{{env.HOSTBILL_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: hostbill-orders-rest
+    port: 8080
+    description: REST adapter for HostBill Admin API — Orders. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/admin/api-php-getorders
+      name: admin-api-php-getorders
+      description: REST surface for admin-api.php#getOrders.
+      operations:
+      - method: POST
+        name: getorders
+        description: List orders
+        call: hostbill-orders.getorders
+        with:
+          call: rest.call
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: hostbill-orders-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for HostBill Admin API — Orders. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-orders
+      description: List orders
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: hostbill-orders.getorders
+      with:
+        call: tools.call
+      outputParameters:
+      - type: object
+        mapping: $.

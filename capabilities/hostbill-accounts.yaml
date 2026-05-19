@@ -1,0 +1,81 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: HostBill Admin API — Accounts
+  description: 'HostBill Admin API — Accounts. 1 operations. Lead operation: Add an account. Self-contained Naftiko capability
+    covering one Hostbill business surface.'
+  tags:
+  - Hostbill
+  - Accounts
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HOSTBILL_API_KEY: HOSTBILL_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: hostbill-accounts
+    baseUri: https://yourinstance.hostbillapp.com
+    description: HostBill Admin API — Accounts business capability. Self-contained, no shared references.
+    resources:
+    - name: admin-api.php#addAccount
+      path: /admin/api.php#addAccount
+      operations:
+      - name: addaccount
+        method: POST
+        description: Add an account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: call
+          in: query
+          type: string
+          required: true
+    authentication:
+      type: apikey
+      key: api_id
+      value: '{{env.HOSTBILL_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: hostbill-accounts-rest
+    port: 8080
+    description: REST adapter for HostBill Admin API — Accounts. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/admin/api-php-addaccount
+      name: admin-api-php-addaccount
+      description: REST surface for admin-api.php#addAccount.
+      operations:
+      - method: POST
+        name: addaccount
+        description: Add an account
+        call: hostbill-accounts.addaccount
+        with:
+          call: rest.call
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: hostbill-accounts-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for HostBill Admin API — Accounts. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: add-account
+      description: Add an account
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: hostbill-accounts.addaccount
+      with:
+        call: tools.call
+      outputParameters:
+      - type: object
+        mapping: $.

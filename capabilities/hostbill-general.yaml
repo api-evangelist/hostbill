@@ -1,0 +1,115 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: HostBill Admin API
+  description: 'HostBill Admin API. 1 operations. Lead operation: Invoke a HostBill API call. Self-contained Naftiko capability
+    covering one Hostbill business surface.'
+  tags:
+  - Hostbill
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    HOSTBILL_API_KEY: HOSTBILL_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: hostbill-general
+    baseUri: https://yourinstance.hostbillapp.com
+    description: HostBill Admin API business capability. Self-contained, no shared references.
+    resources:
+    - name: admin-api.php
+      path: /admin/api.php
+      operations:
+      - name: callapi
+        method: POST
+        description: Invoke a HostBill API call
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: call
+          in: query
+          type: string
+          description: API method name (e.g. addAccount, getClients, addInvoice).
+          required: true
+        - name: api_id
+          in: query
+          type: string
+          required: true
+        - name: api_key
+          in: query
+          type: string
+          required: true
+        - name: page
+          in: query
+          type: integer
+        - name: perpage
+          in: query
+          type: integer
+        - name: language_id
+          in: query
+          type: integer
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    authentication:
+      type: apikey
+      key: api_id
+      value: '{{env.HOSTBILL_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: hostbill-general-rest
+    port: 8080
+    description: REST adapter for HostBill Admin API. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/admin/api-php
+      name: admin-api-php
+      description: REST surface for admin-api.php.
+      operations:
+      - method: POST
+        name: callapi
+        description: Invoke a HostBill API call
+        call: hostbill-general.callapi
+        with:
+          call: rest.call
+          api_id: rest.api_id
+          api_key: rest.api_key
+          page: rest.page
+          perpage: rest.perpage
+          language_id: rest.language_id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: hostbill-general-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for HostBill Admin API. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: invoke-hostbill-api-call
+      description: Invoke a HostBill API call
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: hostbill-general.callapi
+      with:
+        call: tools.call
+        api_id: tools.api_id
+        api_key: tools.api_key
+        page: tools.page
+        perpage: tools.perpage
+        language_id: tools.language_id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
