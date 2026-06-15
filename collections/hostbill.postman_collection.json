@@ -1,0 +1,1028 @@
+{
+  "item": [
+    {
+      "id": "43566723-6ad6-4ea5-86b6-36563963e4ce",
+      "name": "Accounts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "42197bf7-c423-4299-8420-87d4409d6c1a",
+          "name": "Add an account",
+          "request": {
+            "name": "Add an account",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "api.php"
+              ],
+              "hash": "addAccount",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "call",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your HostBill installation host",
+                  "type": "any",
+                  "value": "{{yourinstance}}",
+                  "key": "yourinstance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2cb0c246-0c37-4cd3-989b-a23ed1948c30",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "api.php"
+                  ],
+                  "hash": "addAccount",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "call",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_id",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your HostBill installation host",
+                      "type": "any",
+                      "value": "{{yourinstance}}",
+                      "key": "yourinstance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"call\": \"string\",\n  \"server_time\": 3496\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "209f1745-ffce-400b-9f28-7eebe93e3344",
+      "name": "Clients",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d2125600-190c-4599-92fc-9cb75a2dc686",
+          "name": "List clients",
+          "request": {
+            "name": "List clients",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "api.php"
+              ],
+              "hash": "getClients",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "call",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your HostBill installation host",
+                  "type": "any",
+                  "value": "{{yourinstance}}",
+                  "key": "yourinstance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cb8d7f36-ce70-4f51-8fe3-f0d459de2606",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "api.php"
+                  ],
+                  "hash": "getClients",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "call",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_id",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your HostBill installation host",
+                      "type": "any",
+                      "value": "{{yourinstance}}",
+                      "key": "yourinstance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"call\": \"string\",\n  \"server_time\": 3496\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "3bc39158-1f2e-4c75-869a-2f6aa025690f",
+      "name": "Invoices",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e448552e-decd-4690-b008-21994779b5fd",
+          "name": "List invoices",
+          "request": {
+            "name": "List invoices",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "api.php"
+              ],
+              "hash": "getInvoices",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "call",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your HostBill installation host",
+                  "type": "any",
+                  "value": "{{yourinstance}}",
+                  "key": "yourinstance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "225146c0-b096-4035-aeb1-6b7a0e407253",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "api.php"
+                  ],
+                  "hash": "getInvoices",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "call",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_id",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your HostBill installation host",
+                      "type": "any",
+                      "value": "{{yourinstance}}",
+                      "key": "yourinstance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"call\": \"string\",\n  \"server_time\": 3496\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "9b03aab2-416e-4763-8a46-456593d4c327",
+      "name": "Orders",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "10a47e2c-ff6c-4b22-ab24-57ef274aeb55",
+          "name": "List orders",
+          "request": {
+            "name": "List orders",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "api.php"
+              ],
+              "hash": "getOrders",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "call",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your HostBill installation host",
+                  "type": "any",
+                  "value": "{{yourinstance}}",
+                  "key": "yourinstance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f4ef73eb-2c50-4384-b5a2-6bcc6520f645",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "api.php"
+                  ],
+                  "hash": "getOrders",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "call",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_id",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your HostBill installation host",
+                      "type": "any",
+                      "value": "{{yourinstance}}",
+                      "key": "yourinstance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"call\": \"string\",\n  \"server_time\": 3496\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "61c61c98-3900-47d7-b1d7-28eafecc2598",
+      "name": "Tickets",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "73e4c43f-4b5e-4154-beb0-1c29ffbb27cf",
+          "name": "List support tickets",
+          "request": {
+            "name": "List support tickets",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "api.php"
+              ],
+              "hash": "getTickets",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "call",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your HostBill installation host",
+                  "type": "any",
+                  "value": "{{yourinstance}}",
+                  "key": "yourinstance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "844a3b2b-ab9f-45a5-b58b-e5b17ac1ba37",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "api.php"
+                  ],
+                  "hash": "getTickets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "call",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_id",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your HostBill installation host",
+                      "type": "any",
+                      "value": "{{yourinstance}}",
+                      "key": "yourinstance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"call\": \"string\",\n  \"server_time\": 3496\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "7ec67a7e-afb0-4eac-9e13-5e202c8ac5fc",
+      "name": "Domains",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e3addef3-e7a2-487d-b12c-a94d52a1b656",
+          "name": "List domains",
+          "request": {
+            "name": "List domains",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "api.php"
+              ],
+              "hash": "getDomains",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "call",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your HostBill installation host",
+                  "type": "any",
+                  "value": "{{yourinstance}}",
+                  "key": "yourinstance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "456609a9-1eab-4e82-832e-13682cd5eba9",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "api.php"
+                  ],
+                  "hash": "getDomains",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "call",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_id",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your HostBill installation host",
+                      "type": "any",
+                      "value": "{{yourinstance}}",
+                      "key": "yourinstance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"call\": \"string\",\n  \"server_time\": 3496\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "eacef1c3-770b-4bf1-b602-c71da9f44967",
+      "name": "Services",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [],
+      "event": []
+    },
+    {
+      "id": "26262b81-4b15-4dc1-a6c0-e691007debc2",
+      "name": "Transactions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "49552ba6-e592-4f26-a605-9b958d4f2124",
+          "name": "List transactions",
+          "request": {
+            "name": "List transactions",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "api.php"
+              ],
+              "hash": "getTransactions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "call",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your HostBill installation host",
+                  "type": "any",
+                  "value": "{{yourinstance}}",
+                  "key": "yourinstance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fce8aa4c-4b8c-46da-9c67-cb6c5061bbce",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "api.php"
+                  ],
+                  "hash": "getTransactions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "call",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_id",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your HostBill installation host",
+                      "type": "any",
+                      "value": "{{yourinstance}}",
+                      "key": "yourinstance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"call\": \"string\",\n  \"server_time\": 3496\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2ce9b0ff-e27c-4e4a-b8e6-40a0e5abd875",
+      "name": "General",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [],
+      "event": []
+    },
+    {
+      "id": "1acb385b-66cb-4a84-9820-12aee2acc96a",
+      "name": "Invoke a HostBill API call",
+      "request": {
+        "name": "Invoke a HostBill API call",
+        "description": {
+          "content": "All HostBill API operations are POSTed here. Select the operation by setting the `call` form field.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "admin",
+            "api.php"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "call",
+              "value": "<string>",
+              "description": "(Required) API method name (e.g. addAccount, getClients, addInvoice)."
+            },
+            {
+              "disabled": false,
+              "key": "api_id",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "api_key",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "disabled": false,
+              "key": "perpage",
+              "value": "25"
+            },
+            {
+              "disabled": false,
+              "key": "language_id",
+              "value": "<integer>"
+            }
+          ],
+          "variable": [
+            {
+              "description": "Your HostBill installation host",
+              "type": "any",
+              "value": "{{yourinstance}}",
+              "key": "yourinstance"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "disabled": false,
+              "key": "key_0",
+              "value": "false"
+            },
+            {
+              "disabled": false,
+              "key": "key_1",
+              "value": "true"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "c600c364-799d-47c2-9cf1-7466a90311a7",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "admin",
+                "api.php"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "call",
+                  "value": "<string>"
+                },
+                {
+                  "key": "api_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "api_key",
+                  "value": "<string>"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "perpage",
+                  "value": "25"
+                },
+                {
+                  "key": "language_id",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "api_id",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your HostBill installation host",
+                  "type": "any",
+                  "value": "{{yourinstance}}",
+                  "key": "yourinstance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "key_0",
+                  "value": "5324.578868995845"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"success\": false,\n  \"call\": \"string\",\n  \"server_time\": 3496\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your HostBill installation host",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "yourinstance.hostbillapp.com",
+      "key": "yourinstance"
+    },
+    {
+      "type": "string",
+      "value": "https://yourinstance.hostbillapp.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_id"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3afdcd66-d9b8-479a-81df-018e7d4e67be",
+    "name": "HostBill Admin API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Minimal OpenAPI description for the HostBill Admin HTTP API. All operations are POSTed to a single endpoint with a `call` parameter selecting the underlying function. Authentication uses `api_id` and `api_key` query/body parameters. Generated from public documentation; verify before production use.\n\nContact Support:\n Name: HostBill API Documentation",
+      "type": "text/plain"
+    }
+  }
+}

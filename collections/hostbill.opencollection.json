@@ -1,0 +1,256 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HostBill Admin API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_id",
+      "value": "{{api_id}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Default",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Invoke a HostBill API call",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://yourinstance.hostbillapp.com/admin/api.php",
+            "params": [
+              {
+                "name": "call",
+                "value": "",
+                "type": "query",
+                "description": "API method name (e.g. addAccount, getClients, addInvoice)."
+              },
+              {
+                "name": "api_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "perpage",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "language_id",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "form-urlencoded",
+              "data": []
+            }
+          },
+          "docs": "All HostBill API operations are POSTed here. Select the operation by setting the `call` form field."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Clients",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List clients",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://yourinstance.hostbillapp.com/admin/api.php#getClients",
+            "params": [
+              {
+                "name": "call",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List clients"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Add an account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://yourinstance.hostbillapp.com/admin/api.php#addAccount",
+            "params": [
+              {
+                "name": "call",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Add an account"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Invoices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List invoices",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://yourinstance.hostbillapp.com/admin/api.php#getInvoices",
+            "params": [
+              {
+                "name": "call",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List invoices"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://yourinstance.hostbillapp.com/admin/api.php#getOrders",
+            "params": [
+              {
+                "name": "call",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List orders"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Tickets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List support tickets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://yourinstance.hostbillapp.com/admin/api.php#getTickets",
+            "params": [
+              {
+                "name": "call",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List support tickets"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Domains",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List domains",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://yourinstance.hostbillapp.com/admin/api.php#getDomains",
+            "params": [
+              {
+                "name": "call",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List domains"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Transactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://yourinstance.hostbillapp.com/admin/api.php#getTransactions",
+            "params": [
+              {
+                "name": "call",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List transactions"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
