@@ -1,0 +1,21 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/hostbill-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+schemes:
+- name: apiKeyId
+  type: apiKey
+  in: query
+  parameter: api_id
+  sources:
+  - openapi/hostbill-openapi.yml
+- name: apiKeySecret
+  type: apiKey
+  in: query
+  parameter: api_key
+  sources:
+  - openapi/hostbill-openapi.yml

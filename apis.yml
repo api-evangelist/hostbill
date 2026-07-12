@@ -42,6 +42,12 @@ apis:
       - type: OpenAPI
         url: openapi/hostbill-openapi.yml
 common:
+  - type: VulnerabilityDisclosure
+    url: security/hostbill-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/hostbill-domain-security.yml
+  - type: Authentication
+    url: authentication/hostbill-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/hostbill
   - type: LinkedIn
@@ -52,6 +58,8 @@ common:
     url: https://hostbillapp.com/features/
   - type: Support
     url: https://hostbillapp.com/support/
+  - url: https://blog.hostbillapp.com/feed/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
