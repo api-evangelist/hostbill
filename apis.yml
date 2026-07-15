@@ -42,6 +42,8 @@ apis:
       - type: OpenAPI
         url: openapi/hostbill-openapi.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/hostbill-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/hostbill-vulnerability-disclosure.yml
   - type: DomainSecurity
