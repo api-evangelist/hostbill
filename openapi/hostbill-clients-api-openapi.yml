@@ -1,0 +1,63 @@
+openapi: 3.1.0
+info:
+  title: HostBill Admin Accounts Clients API
+  description: Minimal OpenAPI description for the HostBill Admin HTTP API. All operations are POSTed to a single endpoint with a `call` parameter selecting the underlying function. Authentication uses `api_id` and `api_key` query/body parameters. Generated from public documentation; verify before production use.
+  version: '2.0'
+  contact:
+    name: HostBill API Documentation
+    url: https://api2.hostbillapp.com/
+  x-generated-from: https://api2.hostbillapp.com/
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://yourinstance.hostbillapp.com
+  description: HostBill installation (replace host)
+  variables:
+    yourinstance:
+      default: yourinstance.hostbillapp.com
+      description: Your HostBill installation host
+security:
+- apiKeyId: []
+  apiKeySecret: []
+tags:
+- name: Clients
+paths:
+  /admin/api.php#getClients:
+    post:
+      operationId: getClients
+      summary: List clients
+      tags:
+      - Clients
+      parameters:
+      - name: call
+        in: query
+        required: true
+        schema:
+          type: string
+          const: getClients
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+components:
+  schemas:
+    ApiResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        call:
+          type: string
+        server_time:
+          type: integer
+  securitySchemes:
+    apiKeyId:
+      type: apiKey
+      in: query
+      name: api_id
+    apiKeySecret:
+      type: apiKey
+      in: query
+      name: api_key
