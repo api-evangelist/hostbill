@@ -5,7 +5,20 @@ description: >-
   service companies. HostBill provides an Admin API that enables custom applications to call HostBill functions remotely
   via HTTP protocol or from HostBill modules.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/hostbill.png
 tags:
   - Automation
   - Billing
@@ -16,31 +29,118 @@ created: '2025-02-09'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: hostbill:hostbill-admin-api
-    name: HostBill Admin API
-    description: >-
-      The HostBill Admin API enables custom applications to call HostBill functions remotely via HTTP protocol,
-      providing access to client management, invoicing, service provisioning, billing operations, ticket handling, and
-      plugin integrations including DNS, IPAM, Proxmox, and VMManager.
-    humanURL: https://api2.hostbillapp.com/
-    baseURL: https://yourinstance.hostbillapp.com/api2.php
-    tags:
-      - Accounts
-      - Billing
-      - Clients
-      - Domains
-      - Invoices
-      - Orders
-      - Services
-      - Tickets
-      - Web Hosting
-    properties:
-      - type: Documentation
-        url: https://api2.hostbillapp.com/
-      - type: Authentication
-        url: https://api2.hostbillapp.com/
-      - type: OpenAPI
-        url: openapi/hostbill-openapi.yml
+- aid: hostbill:hostbill-accounts-api
+  name: HostBill Accounts API
+  description: The Accounts API from HostBill — 1 operation(s) for accounts.
+  humanURL: https://api2.hostbillapp.com/
+  baseURL: https://yourinstance.hostbillapp.com/api2.php
+  tags:
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/hostbill-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://api2.hostbillapp.com/
+  - type: Authentication
+    url: https://api2.hostbillapp.com/
+- aid: hostbill:hostbill-admin-api
+  name: HostBill Admin API
+  description: The Admin API from HostBill — 1 operation(s) for admin.
+  humanURL: https://api2.hostbillapp.com/
+  baseURL: https://yourinstance.hostbillapp.com/api2.php
+  tags:
+  - Admin
+  properties:
+  - type: OpenAPI
+    url: openapi/hostbill-admin-api-openapi.yml
+  - type: Documentation
+    url: https://api2.hostbillapp.com/
+  - type: Authentication
+    url: https://api2.hostbillapp.com/
+- aid: hostbill:hostbill-clients-api
+  name: HostBill Clients API
+  description: The Clients API from HostBill — 1 operation(s) for clients.
+  humanURL: https://api2.hostbillapp.com/
+  baseURL: https://yourinstance.hostbillapp.com/api2.php
+  tags:
+  - Clients
+  properties:
+  - type: OpenAPI
+    url: openapi/hostbill-clients-api-openapi.yml
+  - type: Documentation
+    url: https://api2.hostbillapp.com/
+  - type: Authentication
+    url: https://api2.hostbillapp.com/
+- aid: hostbill:hostbill-domains-api
+  name: HostBill Domains API
+  description: The Domains API from HostBill — 1 operation(s) for domains.
+  humanURL: https://api2.hostbillapp.com/
+  baseURL: https://yourinstance.hostbillapp.com/api2.php
+  tags:
+  - Domains
+  properties:
+  - type: OpenAPI
+    url: openapi/hostbill-domains-api-openapi.yml
+  - type: Documentation
+    url: https://api2.hostbillapp.com/
+  - type: Authentication
+    url: https://api2.hostbillapp.com/
+- aid: hostbill:hostbill-invoices-api
+  name: HostBill Invoices API
+  description: The Invoices API from HostBill — 1 operation(s) for invoices.
+  humanURL: https://api2.hostbillapp.com/
+  baseURL: https://yourinstance.hostbillapp.com/api2.php
+  tags:
+  - Invoices
+  properties:
+  - type: OpenAPI
+    url: openapi/hostbill-invoices-api-openapi.yml
+  - type: Documentation
+    url: https://api2.hostbillapp.com/
+  - type: Authentication
+    url: https://api2.hostbillapp.com/
+- aid: hostbill:hostbill-orders-api
+  name: HostBill Orders API
+  description: The Orders API from HostBill — 1 operation(s) for orders.
+  humanURL: https://api2.hostbillapp.com/
+  baseURL: https://yourinstance.hostbillapp.com/api2.php
+  tags:
+  - Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/hostbill-orders-api-openapi.yml
+  - type: Documentation
+    url: https://api2.hostbillapp.com/
+  - type: Authentication
+    url: https://api2.hostbillapp.com/
+- aid: hostbill:hostbill-tickets-api
+  name: HostBill Tickets API
+  description: The Tickets API from HostBill — 1 operation(s) for tickets.
+  humanURL: https://api2.hostbillapp.com/
+  baseURL: https://yourinstance.hostbillapp.com/api2.php
+  tags:
+  - Tickets
+  properties:
+  - type: OpenAPI
+    url: openapi/hostbill-tickets-api-openapi.yml
+  - type: Documentation
+    url: https://api2.hostbillapp.com/
+  - type: Authentication
+    url: https://api2.hostbillapp.com/
+- aid: hostbill:hostbill-transactions-api
+  name: HostBill Transactions API
+  description: The Transactions API from HostBill — 1 operation(s) for transactions.
+  humanURL: https://api2.hostbillapp.com/
+  baseURL: https://yourinstance.hostbillapp.com/api2.php
+  tags:
+  - Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/hostbill-transactions-api-openapi.yml
+  - type: Documentation
+    url: https://api2.hostbillapp.com/
+  - type: Authentication
+    url: https://api2.hostbillapp.com/
 common:
   - type: AgenticAccess
     url: agentic-access/hostbill-agentic-access.yml
