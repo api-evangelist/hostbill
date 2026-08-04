@@ -1,0 +1,28 @@
+{
+  "provider": "hostbill",
+  "sources": [
+    "hostbill-accounts-api-openapi.yml",
+    "hostbill-admin-api-openapi.yml",
+    "hostbill-clients-api-openapi.yml",
+    "hostbill-domains-api-openapi.yml",
+    "hostbill-invoices-api-openapi.yml",
+    "hostbill-orders-api-openapi.yml",
+    "hostbill-tickets-api-openapi.yml",
+    "hostbill-transactions-api-openapi.yml"
+  ],
+  "outputs": [
+    "hostbill-accounts-api-openapi.yml",
+    "hostbill-admin-api-openapi.yml",
+    "hostbill-clients-api-openapi.yml",
+    "hostbill-domains-api-openapi.yml",
+    "hostbill-invoices-api-openapi.yml",
+    "hostbill-orders-api-openapi.yml",
+    "hostbill-tickets-api-openapi.yml",
+    "hostbill-transactions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -1,0 +1,247 @@
+openapi: 3.1.0
+info:
+  title: HostBill Admin API
+  description: >-
+    Minimal OpenAPI description for the HostBill Admin HTTP API. All operations
+    are POSTed to a single endpoint with a `call` parameter selecting the
+    underlying function. Authentication uses `api_id` and `api_key` query/body
+    parameters. Generated from public documentation; verify before production
+    use.
+  version: "2.0"
+  contact:
+    name: HostBill API Documentation
+    url: https://api2.hostbillapp.com/
+  x-generated-from: https://api2.hostbillapp.com/
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+  - url: https://yourinstance.hostbillapp.com
+    description: HostBill installation (replace host)
+    variables:
+      yourinstance:
+        default: yourinstance.hostbillapp.com
+        description: Your HostBill installation host
+security:
+  - apiKeyId: []
+    apiKeySecret: []
+tags:
+  - name: Accounts
+  - name: Clients
+  - name: Invoices
+  - name: Orders
+  - name: Tickets
+  - name: Domains
+  - name: Services
+  - name: Transactions
+  - name: General
+paths:
+  /admin/api.php:
+    post:
+      operationId: callApi
+      summary: Invoke a HostBill API call
+      description: >-
+        All HostBill API operations are POSTed here. Select the operation by
+        setting the `call` form field.
+      parameters:
+        - name: call
+          in: query
+          required: true
+          description: API method name (e.g. addAccount, getClients, addInvoice).
+          schema:
+            type: string
+        - name: api_id
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: api_key
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: integer
+            default: 0
+        - name: perpage
+          in: query
+          schema:
+            type: integer
+            default: 25
+        - name: language_id
+          in: query
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /admin/api.php#getClients:
+    post:
+      operationId: getClients
+      summary: List clients
+      tags:
+        - Clients
+      parameters:
+        - name: call
+          in: query
+          required: true
+          schema:
+            type: string
+            const: getClients
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /admin/api.php#addAccount:
+    post:
+      operationId: addAccount
+      summary: Add an account
+      tags:
+        - Accounts
+      parameters:
+        - name: call
+          in: query
+          required: true
+          schema:
+            type: string
+            const: addAccount
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /admin/api.php#getInvoices:
+    post:
+      operationId: getInvoices
+      summary: List invoices
+      tags:
+        - Invoices
+      parameters:
+        - name: call
+          in: query
+          required: true
+          schema:
+            type: string
+            const: getInvoices
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /admin/api.php#getOrders:
+    post:
+      operationId: getOrders
+      summary: List orders
+      tags:
+        - Orders
+      parameters:
+        - name: call
+          in: query
+          required: true
+          schema:
+            type: string
+            const: getOrders
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /admin/api.php#getTickets:
+    post:
+      operationId: getTickets
+      summary: List support tickets
+      tags:
+        - Tickets
+      parameters:
+        - name: call
+          in: query
+          required: true
+          schema:
+            type: string
+            const: getTickets
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /admin/api.php#getDomains:
+    post:
+      operationId: getDomains
+      summary: List domains
+      tags:
+        - Domains
+      parameters:
+        - name: call
+          in: query
+          required: true
+          schema:
+            type: string
+            const: getDomains
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /admin/api.php#getTransactions:
+    post:
+      operationId: getTransactions
+      summary: List transactions
+      tags:
+        - Transactions
+      parameters:
+        - name: call
+          in: query
+          required: true
+          schema:
+            type: string
+            const: getTransactions
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+components:
+  securitySchemes:
+    apiKeyId:
+      type: apiKey
+      in: query
+      name: api_id
+    apiKeySecret:
+      type: apiKey
+      in: query
+      name: api_key
+  schemas:
+    ApiResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        call:
+          type: string
+        server_time:
+          type: integer
