@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HostBill Admin Accounts Tickets API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_id",
+      "value": "{{api_id}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tickets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List support tickets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://yourinstance.hostbillapp.com/admin/api.php#getTickets",
+            "params": [
+              {
+                "name": "call",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List support tickets"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

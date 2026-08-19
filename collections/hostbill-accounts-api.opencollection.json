@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HostBill Admin Accounts API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_id",
+      "value": "{{api_id}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Add an account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://yourinstance.hostbillapp.com/admin/api.php#addAccount",
+            "params": [
+              {
+                "name": "call",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Add an account"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

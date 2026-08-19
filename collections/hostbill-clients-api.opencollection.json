@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HostBill Admin Accounts Clients API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_id",
+      "value": "{{api_id}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Clients",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List clients",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://yourinstance.hostbillapp.com/admin/api.php#getClients",
+            "params": [
+              {
+                "name": "call",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List clients"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
