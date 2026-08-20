@@ -35,6 +35,8 @@ apis:
   humanURL: https://api2.hostbillapp.com/
   baseURL: https://yourinstance.hostbillapp.com/api2.php
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
@@ -105,6 +107,8 @@ apis:
   humanURL: https://api2.hostbillapp.com/
   baseURL: https://yourinstance.hostbillapp.com/api2.php
   tags:
+  - Order
+  tags_raw:
   - Orders
   properties:
   - type: OpenAPI
@@ -133,6 +137,8 @@ apis:
   humanURL: https://api2.hostbillapp.com/
   baseURL: https://yourinstance.hostbillapp.com/api2.php
   tags:
+  - Transaction
+  tags_raw:
   - Transactions
   properties:
   - type: OpenAPI
