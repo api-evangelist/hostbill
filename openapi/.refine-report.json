@@ -1,14 +1,7 @@
 {
   "provider": "hostbill",
   "sources": [
-    "hostbill-accounts-api-openapi.yml",
-    "hostbill-admin-api-openapi.yml",
-    "hostbill-clients-api-openapi.yml",
-    "hostbill-domains-api-openapi.yml",
-    "hostbill-invoices-api-openapi.yml",
-    "hostbill-orders-api-openapi.yml",
-    "hostbill-tickets-api-openapi.yml",
-    "hostbill-transactions-api-openapi.yml"
+    "_ae-authored/hostbill-openapi.yml"
   ],
   "outputs": [
     "hostbill-accounts-api-openapi.yml",
@@ -23,6 +16,21 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "hostbill-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "hostbill-openapi.yml: tagged paths POST /admin/api.php -> Admin",
+    "hostbill-openapi.yml: declared missing tag: Admin",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "hostbill-accounts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hostbill-admin-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hostbill-clients-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hostbill-domains-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hostbill-invoices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hostbill-orders-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hostbill-tickets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hostbill-transactions-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
