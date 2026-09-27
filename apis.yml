@@ -135,6 +135,8 @@ apis:
   humanURL: https://api2.hostbillapp.com/
   baseURL: https://yourinstance.hostbillapp.com/api2.php
   tags:
+  - Ticketing
+  tags_raw:
   - Tickets
   properties:
   - type: OpenAPI
