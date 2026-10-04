@@ -1,0 +1,35 @@
+slug: hostbill
+provider: HostBill
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Tickets
+  spec_file: hostbill-tickets-api-openapi.yml
+  capability_id: BC-430.10
+  capability_id_l1: BC-430
+  capability_name: Customer Inquiry Management
+  confidence: 0.8
+  evidence: POST /admin/api.php#getTickets  getTickets  List support tickets
+  reason: The summary explicitly says 'support tickets', i.e. inbound customer contacts handled by the
+    provider's support desk, which is Customer Inquiry Management. Thin surface (one list call) keeps
+    it below 0.9.
+- tag: Invoices
+  spec_file: hostbill-invoices-api-openapi.yml
+  capability_id: BC-4250.30
+  capability_id_l1: BC-4250
+  capability_name: Invoicing & Statement Management
+  confidence: 0.72
+  evidence: POST /admin/api.php#getInvoices  getInvoices  List invoices
+  reason: HostBill is described as 'billing and automation software for web hosting providers'; invoice
+    retrieval is invoicing/statement management within the recurring-billing model. Only one list operation
+    is exposed, so moderate confidence.

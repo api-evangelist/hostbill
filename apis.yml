@@ -162,6 +162,9 @@ apis:
   - type: Authentication
     url: https://api2.hostbillapp.com/
 common:
+  - type: CapabilityMap
+    url: capabilities/hostbill-capability-edges.yml
+    name: HostBill Business Capability Map
   - type: AgenticAccess
     url: agentic-access/hostbill-agentic-access.yml
   - type: VulnerabilityDisclosure
